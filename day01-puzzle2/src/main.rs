@@ -1,10 +1,10 @@
-static INPUT: &'static str = include_str!("../resources/input.txt");
+static INPUT: &str = include_str!("../resources/input.txt");
 
 fn main() {
     let sum: i64 = INPUT
         .lines()
         .map(|l| l.parse().unwrap())
-        .map(|mass| calc_fuel_with_fuel(mass))
+        .map(calc_fuel_with_fuel)
         .sum();
     println!("{}", sum);
 }
